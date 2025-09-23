@@ -6,13 +6,13 @@ This last year, the DCRDEX project has created, with the help of Tivra, a one pa
 
 ## Core development
 
-Bison Wallet / DCR Dex has been six years in development and the code base has grown substantially. There are a lot of things to update and bugs to fix. This proposal's main purpose is to keep devolopers fixing issues, squashing bugs, and updating modules.
+Bison Wallet / DCRDEX has been six years in development and the code base has grown substantially. There are a lot of things to update and bugs to fix. This proposal's main purpose is to keep devolopers fixing issues, squashing bugs, and updating modules.
 
 Some specific updates we are looking at are:
 - finalize the 1.0.4 patch
 - create a 1.1.0 release
 - incorperate react in our UI stack
-- collab with the Creative Refresh prop to udate [bisonwallet.org](https://bisonwallet.org/)
+- collab with the Creative Refresh prop to update [bisonwallet.org](https://bisonwallet.org/)
 - solidify updated eth contracts (this includes outside review)
 - update the eth simnet network so that base and contracts can be better tested
 
