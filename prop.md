@@ -2,7 +2,7 @@ Bison Wallet Maintenance Budget Oct 2025 - March 2026
 
 ## Objectives completed with the [last prop](https://proposals.decred.org/record/0d23788)
 
-This last year, the DCRDEX project has created, with the help of Tivra, a one page, up-to-date website with info about bison wallet and dcrdex at bisonwallet.org. We have furthered development of mesh. We have created a custom database interface to speed up both mesh and other aspects of the dex. It is now being used for transaction history in a few wallets. We have created a system for fee oracles that can be extended to price as well, which will be used in mesh trading. We have new eth and pol contracts that use less gas and can be used without having any eth to start trading (not yet reviewed or deployed). Until now a user would need to have some tiny amount of eth to make their first trade, but not anymore. For btc, the groundwork for private swaps has been done. They are not yet usable but will be SOON. We have a working “companion app” where a user can run bison wallet on their home network and then connect to it over the web from anywhere through tor. The android app must currently be built from source. There have been multiple upgrades to the market making bots. The UI has been progressively updated, pol and numerous tokens have been added, and mulit-hop arbitrage has been enabled. Base has been added and is in a testing phase. And of course we have been doing our best to squash all the bugs.
+This last year, the DCRDEX project has created, with the help of Tivra, a one page, up-to-date website with info about bison wallet and dcrdex at [bisonwallet.org](https://bisonwallet.org/). We have furthered development of mesh. We have created a custom database interface to speed up both mesh and other aspects of the dex. It is now being used for transaction history in a few wallets. We have created a system for fee oracles that can be extended to price as well, which will be used in mesh trading. We have new eth and pol contracts that use less gas and can be used without having any eth to start trading (not yet reviewed or deployed). Until now a user would need to have some tiny amount of eth to make their first trade, but not anymore. For btc, the groundwork for private swaps has been done. They are not yet usable but will be SOON. We have a working “companion app” where a user can run bison wallet on their home network and then connect to it over the web from anywhere through tor. The android app must currently be built from source. There have been multiple upgrades to the market making bots. The UI has been progressively updated, pol and numerous tokens have been added, and mulit-hop arbitrage has been enabled. Base has been added and is in a testing phase. And of course we have been doing our best to squash all the bugs.
 
 ## Core development
 
@@ -11,8 +11,8 @@ Bison Wallet / DCRDEX has been six years in development and the code base has gr
 Some specific updates we are looking at are:
 - finalize the 1.0.4 patch
 - create a 1.1.0 release
-- incorperate react in our UI stack
-- collab with the Creative Refresh prop to update [bisonwallet.org](https://bisonwallet.org/)
+- incorperate react into our UI stack
+- collab with the Creative Refresh prop to update bisonwallet.org
 - solidify updated eth contracts (this includes outside review)
 - update the eth simnet network so that base and contracts can be better tested
 
