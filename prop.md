@@ -53,7 +53,7 @@ In addition to ongoing maintenance, we aim to introduce user-requested features 
 
 - Implement Decred Politeia voting integration. Currently, users can vote on on-chain proposals but not Politeia proposals using staked DCR. This feature will enable Bison Wallet users to fully participate in the Decred governance community.
 
-We anticipate costs in this area will not exceed $40,000 USD.
+We anticipate costs in this area will not exceed $25,000 USD.
 
 ## Team
 
@@ -61,4 +61,4 @@ The work will be led by Joe, Marton, Buck, Philemon, Warrior, and other qualifie
 
 ## Summary
 
-We are requesting a maximum of $100,000 USD for six months of continued core development and new initiatives. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
+We are requesting a maximum of $85,000 USD for six months of continued core development and new initiatives. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
