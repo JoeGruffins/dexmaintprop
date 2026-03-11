@@ -1,6 +1,6 @@
 ## Development Recap
 
-Since [our last proposal](https://proposals.decred.org/record/0d23788), Bison Wallet has shipped the v1.1.0 release, a major update with 393 commits from 14+ contributors. All initiatives from the previous proposal were completed and shipped. Highlights include...
+Since [our last proposal](https://proposals.decred.org/record/963f9fe), Bison Wallet has shipped the v1.1.0 release, a major update with 393 commits from 14+ contributors. All initiatives from the previous proposal were completed and shipped. Highlights include...
 
 - **Monero Wallet:**
   - Added Monero wallet support with automatic download of required client tools.
