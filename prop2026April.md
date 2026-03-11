@@ -51,7 +51,7 @@ Bison Wallet has a large and mature codebase that requires ongoing maintenance. 
 
 We anticipate costs in this area will not exceed $50,000 USD.
 
-## New Development Initiatives
+## New Development Initiative
 
 **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. Once Mesh is online, the coordination will be migrated to use the decentralized Mesh network, removing the need for a centralized server.
 
