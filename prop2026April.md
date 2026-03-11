@@ -3,8 +3,8 @@
 Since [our last proposal](https://proposals.decred.org/record/963f9fe), Bison Wallet has shipped the v1.1.0 release, a major update with 393 commits from 14+ contributors. All initiatives from the previous proposal were completed and shipped. Highlights include...
 
 - **Monero Wallet:**
-  - Added Monero wallet support with automatic download of required client tools.
-  - Reworked wallet creation flow with a new Opener interface to support Monero's CGO-based integration.
+  - Added Monero wallet support using a CGO-based wallet integration that links directly to the Monero wallet library.
+  - Reworked wallet creation flow with a new Opener interface to support Monero's requirements.
 
 - **EVM Improvements:**
   - Deployed a new v1 swap contract with gasless redemptions using EIP-712 relayed transactions, eliminating the need for the redeemer to hold native tokens for gas.
@@ -53,7 +53,7 @@ We anticipate costs in this area will not exceed $50,000 USD.
 
 ## New Development Initiatives
 
-- **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. Once Mesh is online, the coordination will be migrated to use the decentralized Mesh network, removing the need for a centralized server.
+**Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. Once Mesh is online, the coordination will be migrated to use the decentralized Mesh network, removing the need for a centralized server.
 
 We anticipate costs in this area will not exceed $10,000 USD.
 
