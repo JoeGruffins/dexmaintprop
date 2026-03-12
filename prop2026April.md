@@ -17,9 +17,6 @@ Since [our last proposal](https://proposals.decred.org/record/963f9fe), Bison Wa
 - **Politeia Governance:**
   - Integrated Politeia proposal voting into the wallet, allowing users to vote on Politeia proposals with staked DCR directly from Bison Wallet.
 
-- **Desktop:**
-  - Migrated the macOS desktop app from WebView to Electron for improved stability.
-
 - **Trade Reliability:**
   - Fixed infinite refund loops, added broadcast recovery for stuck transactions, SPV rescan stall detection, and mempool transaction recovery.
   - Added per-match swap addresses, a protocol-level change that improves swap isolation.
@@ -27,9 +24,8 @@ Since [our last proposal](https://proposals.decred.org/record/963f9fe), Bison Wa
 
 - **Infrastructure:**
   - Updated to Go 1.24, modernized codebase with `slices`, `maps`, `any`, and built-in `max`/`min`.
+  - Migrated the macOS desktop app from WebView to Electron for improved stability.
   - Refactored and updated many testing tools to help catch bugs and improve performance.
-
-- **Other:**
   - Added wallet timeouts, active trade limits, slippage warnings for market orders, and fiat value display in trade forms.
   - Hardened WebSocket handling and comms rate limiting.
   - Fixed numerous bugs across wallets, market making, and UI.
