@@ -1,6 +1,6 @@
 ## Development Recap
 
-Bison Wallet is shipping the [v1.1.0 release](https://proposals.decred.org/record/963f9fe), a major update with 393 commits from 14+ contributors. All initiatives from the previous proposal were completed, and the release is expected by the end of March or early April. Highlights include:
+Bison Wallet is shipping the v1.1.0 release, a major update with 393 commits from 14+ contributors. All initiatives from the [previous proposal](https://proposals.decred.org/record/963f9fe) were completed, and the release is expected by the end of March or early April. Highlights include:
 
 - **Monero Wallet:**
   - Added Monero wallet support using a CGO-based wallet integration that links directly to the Monero wallet library.
