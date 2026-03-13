@@ -1,6 +1,6 @@
 ## Development Recap
 
-Since [our last proposal](https://proposals.decred.org/record/963f9fe), Bison Wallet has shipped the v1.1.0 release, a major update with 393 commits from 14+ contributors. All initiatives from the previous proposal were completed and shipped. Highlights include:
+Bison Wallet is shipping the [v1.1.0 release](https://proposals.decred.org/record/963f9fe), a major update with 393 commits from 14+ contributors. All initiatives from the previous proposal were completed, and the release is expected by the end of March or early April. Highlights include:
 
 - **Monero Wallet:**
   - Added Monero wallet support using a CGO-based wallet integration that links directly to the Monero wallet library.
@@ -42,6 +42,10 @@ We anticipate costs in this area will not exceed $50,000 USD.
 
 We anticipate costs in this area will not exceed $25,000 USD.
 
+**Fiat On-Ramp:** Integrate a third-party fiat on-ramp service (such as Alchemy Pay) into Bison Wallet, allowing users to purchase cryptocurrency directly within the wallet using credit cards, bank transfers, and other traditional payment methods. The on-ramp provider handles all KYC/AML compliance and payment processing. Our integration work covers the UI, API integration, supported asset and region filtering, and testing.
+
+We anticipate costs in this area will not exceed $10,000 USD.
+
 ## Code Signing
 
 Bison Wallet releases are currently signed by the Decred organization, but this adds delays when shipping patches and updates. By obtaining our own code signing certificates for Windows and macOS, we can release updates independently and get fixes to users faster. An Apple Developer membership is required for macOS signing and notarization, and a code signing certificate is required for Windows.
@@ -54,4 +58,4 @@ Work will be performed by Bisoncraft LLC under the leadership of Joe, Marton, an
 
 ## Summary
 
-We are requesting a maximum of $76,000 USD for six months of continued core development, new initiatives, and operational costs. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
+We are requesting a maximum of $86,000 USD for six months of continued core development, new initiatives, and operational costs. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
