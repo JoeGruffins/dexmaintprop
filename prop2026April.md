@@ -36,26 +36,10 @@ Bison Wallet has a large and mature codebase that requires ongoing maintenance. 
 
 We anticipate costs in this area will not exceed $50,000 USD.
 
-## New Development Initiatives
-
-- **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. Once Mesh is online, the coordination will be migrated to use the decentralized Mesh network, removing the need for a centralized server.
-
-We anticipate costs in this area will not exceed $25,000 USD.
-
-- **Fiat On-Ramp:** Integrate a third-party fiat on-ramp service (such as Alchemy Pay) into Bison Wallet, allowing users to purchase cryptocurrency directly within the wallet using credit cards, bank transfers, and other traditional payment methods. The on-ramp provider handles all KYC/AML compliance and payment processing. Our integration work covers the UI, API integration, supported asset and region filtering, and testing.
-
-We anticipate costs in this area will not exceed $10,000 USD.
-
-## Code Signing
-
-Bison Wallet releases are currently signed by the Decred organization, but this adds delays when shipping patches and updates. By obtaining our own code signing certificates for Windows and macOS, we can release updates independently and get fixes to users faster. An Apple Developer membership is required for macOS signing and notarization, and a code signing certificate is required for Windows.
-
-We anticipate ongoing annual costs in this area will not exceed $1,000 USD.
-
 ## Team
 
 Work will be performed by Bisoncraft LLC under the leadership of Joe, Marton, and Buck.
 
 ## Summary
 
-We are requesting a maximum of $86,000 USD for six months of continued core development, new initiatives, and operational costs. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
+We are requesting a maximum of $50,000 USD for six months of continued core development and operational costs. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
