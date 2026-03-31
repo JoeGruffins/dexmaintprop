@@ -91,7 +91,7 @@ The project maintains 5 CI/CD workflows, 16 asset-specific test harnesses, and a
 
 The project [issue tracker](https://github.com/decred/dcrdex/issues) has 154 open issues with 1,033 closed to date. Open issues range from bug reports to feature requests and UX improvements. In addition to working through these, the following items are planned targets for this period:
 
-- **Final release of v1.1.0** - The release is at RC2. Remaining work includes addressing issues found during RC testing.
+- **Final release of v1.1.0** - Remaining work includes addressing issues found during RC testing.
 - **Bug fixes** - Open bugs include an invalid passphrase error on startup ([#3574](https://github.com/decred/dcrdex/issues/3574)), a gasless relay race condition ([#3572](https://github.com/decred/dcrdex/issues/3572)), fund availability issues when posting trades ([#3512](https://github.com/decred/dcrdex/issues/3512)), and USDC/Polygon wallet irregularities ([#3457](https://github.com/decred/dcrdex/issues/3457)).
 - **Companion app** - The companion app currently cannot use some endpoints ([#3583](https://github.com/decred/dcrdex/issues/3583)).
 - **Market making reliability** - Ongoing fixes for CEX adapter sync issues including MEXC arb errors ([#3466](https://github.com/decred/dcrdex/issues/3466)) and balance tracking.
