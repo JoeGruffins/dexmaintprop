@@ -1,6 +1,6 @@
 ## Development Recap
 
-Bison Wallet is shipping the [v1.1.0 release](https://github.com/decred/dcrdex/blob/master/docs/release-notes/release-notes-1.1.0.md), a major update with 400+ commits from 60+ contributors. 958 files were changed with 169,000+ insertions and 40,000+ deletions. All initiatives from the [previous proposal](https://proposals.decred.org/record/963f9fe) were completed, and the release is expected by the end of March or early April. Highlights include:
+Bison Wallet [v1.1.0](https://github.com/decred/dcrdex/blob/master/docs/release-notes/release-notes-1.1.0.md) is at release candidate 2, a major update with 400+ commits from 60+ contributors. 958 files were changed with 169,000+ insertions and 40,000+ deletions. All initiatives from the [previous proposal](https://proposals.decred.org/record/963f9fe) were completed. Highlights include:
 
 - **Monero Wallet:**
   - Added Monero wallet support using a CGO-based wallet integration that links directly to the Monero wallet library.
@@ -32,9 +32,9 @@ Bison Wallet is shipping the [v1.1.0 release](https://github.com/decred/dcrdex/b
 
 ## What This Proposal Covers
 
-This proposal funds the ongoing engineering work required to keep Bison Wallet functional, secure, and releasable. Bison Wallet is a large, multi-platform application with 377,000+ lines of Go and 56,000+ lines of TypeScript/JavaScript across 689 Go source files. It integrates with 13 independent blockchains (BTC, DCR, LTC, BCH, ETH, Polygon, XMR, ZEC, FIRO, DASH, DOGE, DGB, ZCL) plus ERC-20 tokens and OP Stack L2 networks. It ships on Linux, macOS, and Windows, with an Android companion app for remote access to a running Bison Wallet instance.
+This proposal funds ongoing maintenance and new development for Bison Wallet. Bison Wallet is a large, multi-platform application with a 433,000+ line codebase (377,000+ lines of Go and 56,000+ lines of TypeScript/JavaScript) across 689 Go source files. It integrates with 13 independent blockchains (BTC, DCR, LTC, BCH, ETH, Polygon, XMR, ZEC, FIRO, DASH, DOGE, DGB, ZCL) plus ERC-20 tokens and OP Stack L2 networks. It ships on Linux, macOS, and Windows, with an Android companion app for remote access to a running Bison Wallet instance.
 
-This is not speculative feature work. This is the base layer of engineering without which the product stops working. The scope includes:
+The maintenance scope includes:
 
 ### Dependency Management
 
@@ -52,7 +52,7 @@ Cutting a release for Bison Wallet is a significant effort. The v1.1.0 release i
 
 - Release candidate builds and testing across all supported platforms.
 - Simnet integration testing across 24 trading pair configurations and 11 test scenarios using dedicated test harnesses for each supported asset.
-- Patch releases for issues found post-release (e.g., the Electrum wallet regression in v1.1.0 that requires a follow-up patch).
+- Patch releases for issues found post-release.
 - Coordinating with server operators on upgrade timing.
 
 ### Blockchain Maintenance
@@ -87,20 +87,37 @@ Bison Wallet ships as a desktop application (Electron on macOS, WebView on Linux
 
 The project maintains 5 CI/CD workflows, 16 asset-specific test harnesses, and a simnet trade testing suite that exercises real atomic swaps across all supported trading pairs. Keeping this infrastructure working as dependencies and platforms evolve is ongoing work.
 
-## Planned Work
+## Planned Maintenance
 
 The project [issue tracker](https://github.com/decred/dcrdex/issues) has 154 open issues with 1,033 closed to date. Open issues range from bug reports to feature requests and UX improvements. In addition to working through these, the following items are planned targets for this period:
 
-- **Patch release for v1.1.0** - Fix the Electrum wallet regression (BTC, LTC, FIRO currently disabled) and address issues found during RC testing.
+- **Final release of v1.1.0** - The release is at RC2. Remaining work includes addressing issues found during RC testing.
+- **Bug fixes** - Open bugs include an invalid passphrase error on startup ([#3574](https://github.com/decred/dcrdex/issues/3574)), a gasless relay race condition ([#3572](https://github.com/decred/dcrdex/issues/3572)), fund availability issues when posting trades ([#3512](https://github.com/decred/dcrdex/issues/3512)), and USDC/Polygon wallet irregularities ([#3457](https://github.com/decred/dcrdex/issues/3457)).
+- **Companion app** - The companion app currently cannot use some endpoints ([#3583](https://github.com/decred/dcrdex/issues/3583)).
+- **Market making reliability** - Ongoing fixes for CEX adapter sync issues including MEXC arb errors ([#3466](https://github.com/decred/dcrdex/issues/3466)) and balance tracking.
 - **Monero improvements** - Continued development of the XMR integration, including ARM64 support that was recently added and further stability work.
-- **Market making reliability** - Ongoing fixes for CEX adapter sync issues (Binance, Bitget, MEXC, Coinbase) and balance tracking.
 - **Translation and localization** - Completing missing translations and maintaining localization infrastructure.
 - **Documentation updates** - Keeping wiki, API docs, and contributor guides current.
-- **Companion app hardening** - Security improvements for the Android companion app.
 
-## What This Proposal Does Not Cover
+We anticipate maintenance costs will not exceed $100,000 USD.
 
-This proposal does not cover Tatanka Mesh development or other major feature initiatives. Those are separate efforts with their own proposals. This proposal covers the base engineering work that keeps the existing product functional and secure - work that is required regardless of what new features are being developed on top.
+This proposal does not cover Tatanka Mesh development. That is a separate effort with its own proposal.
+
+## New Development Initiatives
+
+- **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. Once Mesh is online, the coordination will be migrated to use the decentralized Mesh network, removing the need for a centralized server.
+
+We anticipate costs in this area will not exceed $25,000 USD.
+
+- **Fiat On-Ramp:** Integrate a third-party fiat on-ramp service (such as Alchemy Pay) into Bison Wallet, allowing users to purchase cryptocurrency directly within the wallet using credit cards, bank transfers, and other traditional payment methods. The on-ramp provider handles all KYC/AML compliance and payment processing. Our integration work covers the UI, API integration, supported asset and region filtering, and testing.
+
+We anticipate costs in this area will not exceed $10,000 USD.
+
+## Code Signing
+
+Bison Wallet releases are currently signed by the Decred organization, but this adds delays when shipping patches and updates. By obtaining our own code signing certificates for Windows and macOS, we can release updates independently and get fixes to users faster. An Apple Developer membership is required for macOS signing and notarization, and a code signing certificate is required for Windows.
+
+We anticipate ongoing annual costs in this area will not exceed $1,000 USD.
 
 ## Team
 
@@ -108,4 +125,4 @@ Work will be performed by Bisoncraft LLC under the leadership of Joe, Marton, an
 
 ## Summary
 
-We are requesting a maximum of $50,000 USD for six months of continued core development and operational costs. This covers dependency management, release engineering, blockchain maintenance, security response, bug fixes, platform support, and CI/CD upkeep for a 433,000+ line codebase integrating 13 blockchains across 3 desktop platforms plus a mobile companion app. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
+We are requesting a maximum of $136,000 USD for one year of continued maintenance, new development, and operational costs. Historically, not all allocated funds have been utilized, and any unused funds will remain in the treasury.
