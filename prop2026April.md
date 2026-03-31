@@ -105,7 +105,7 @@ This proposal does not cover Tatanka Mesh development. That is a separate effort
 
 ## New Development Initiatives
 
-- **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. Once Mesh is online, the coordination will be migrated to use the decentralized Mesh network, removing the need for a centralized server.
+- **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. We had planned on migrating to use the decentralized Mesh network after it was finished, removing the need for a centralized server, but the final mesh product may not be suitable depening on development decisions there. The centralized server will be ofc open source so anyone can run one. One will be run on mainnet as part of this and ongoing maintenance proposals.
 
 We anticipate costs in this area will not exceed $25,000 USD.
 
