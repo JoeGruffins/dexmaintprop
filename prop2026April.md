@@ -113,7 +113,7 @@ We anticipate costs in this area will not exceed $10,000 USD.
 
 ## Multi-DEX Aggregator
 
-We have a [design plan](multi-dex-aggregator-plan.md) for transforming Bison Wallet from a dcrdex-only client into a universal DEX client that can execute swaps through multiple backends including EVM AMMs (Uniswap, Curve), intent-based protocols (NEAR Intents), and others. Users would get comparison pricing across protocols and choose their preferred trust/cost tradeoff per trade.
+We have a [design plan](https://github.com/JoeGruffins/dexmaintprop/blob/main/multi-dex-aggregator-plan.md) for transforming Bison Wallet from a dcrdex-only client into a universal DEX client that can execute swaps through multiple backends including EVM AMMs (Uniswap, Curve), intent-based protocols (NEAR Intents), and others. Users would get comparison pricing across protocols and choose their preferred trust/cost tradeoff per trade.
 
 This work is not being charged as part of this proposal. We intend to pursue funding for each integration from the relevant ecosystem's grants programs (e.g., Uniswap Grants, NEAR Foundation). The Decred ecosystem stands to benefit from this work through increased awareness and users as Bison Wallet becomes accessible to traders across multiple DeFi ecosystems, all while maintaining dcrdex atomic swaps as a core option.
 
