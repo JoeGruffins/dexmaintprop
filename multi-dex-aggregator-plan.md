@@ -285,26 +285,15 @@ Each of these follows the same pattern - implement `ExchangeAdapter`:
 
 When a user wants to swap ETH for USDC, the UI shows:
 
-```
-┌──────────────────────────────────────────────────┐
-│  Swap 1.0 ETH -> USDC                           │
-│                                                  │
-│  dcrdex (atomic swap)                            │
-│    Price: 3,842.50 USDC                          │
-│    Fees:  ~$1.20                                 │
-│    Settlement: ~30 min                           │
-│    Trust: None (atomic swap)                     │
-│                                                  │
-│  Uniswap V3 (AMM)                               │
-│    Price: 3,840.10 USDC                          │
-│    Fees:  ~$4.80 (gas + 0.3% pool fee)           │
-│    Settlement: ~15 sec                           │
-│    Trust: Smart contract                         │
-│    Risk: MEV, slippage                           │
-│                                                  │
-│  [Select and Trade]                              │
-└──────────────────────────────────────────────────┘
-```
+**Swap 1.0 ETH -> USDC**
+
+|                | dcrdex (atomic swap)  | Uniswap V3 (AMM)              |
+|----------------|-----------------------|--------------------------------|
+| **Price**      | 3,842.50 USDC         | 3,840.10 USDC                  |
+| **Fees**       | ~$1.20                | ~$4.80 (gas + 0.3% pool fee)  |
+| **Settlement** | ~30 min               | ~15 sec                        |
+| **Trust**      | None (atomic swap)    | Smart contract                 |
+| **Risk**       | -                     | MEV, slippage                  |
 
 Users see the tradeoff: dcrdex is cheaper and trustless but slower.
 Uniswap is fast but has fees and MEV risk. Their choice.

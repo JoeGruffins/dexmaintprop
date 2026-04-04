@@ -57,7 +57,7 @@ Cutting a release for Bison Wallet is a significant effort. The v1.1.0 release i
 
 ### Blockchain Maintenance
 
-Each of the 13 blockchain integrations is effectively a standalone wallet implementation with its own transaction construction, fee estimation, address handling, and swap contract logic. When any of these blockchains undergo consensus changes, hard forks, or network upgrades, the corresponding Bison Wallet integration must be updated and tested. This includes:
+Each blockchain integration is effectively a standalone wallet implementation with its own transaction construction, fee estimation, address handling, and swap contract logic. When any of these blockchains undergo consensus changes, hard forks, or network upgrades, the corresponding Bison Wallet integration must be updated and tested. This includes:
 
 - Monitoring upstream chain changes and adapting wallet code.
 - Updating fee estimation as network conditions change.
@@ -76,7 +76,7 @@ The codebase handles real money across multiple blockchains. Security issues in 
 
 - Responding to security disclosures and vulnerability reports.
 - Fixing bugs as they are discovered in production use.
-- Addressing the 325+ TODO/FIXME items across 131 files, many of which flag known edge cases in swap settlement, wallet recovery, and error handling.
+- Triaging and addressing the 325+ TODO/FIXME items across 131 files, prioritizing those that affect swap settlement, wallet recovery, and fund safety.
 - Maintaining and expanding the 191 test files and CI pipeline (5 GitHub Actions workflows testing across Go 1.24/1.25 and Node 20/22).
 
 ### Platform Support
@@ -96,8 +96,6 @@ The project [issue tracker](https://github.com/decred/dcrdex/issues) has 154 ope
 - **Companion app** - The companion app currently cannot use some endpoints ([#3583](https://github.com/decred/dcrdex/issues/3583)).
 - **Market making reliability** - Ongoing fixes for CEX adapter sync issues including MEXC arb errors ([#3466](https://github.com/decred/dcrdex/issues/3466)) and balance tracking.
 - **Monero improvements** - Continued development of the XMR integration, including ARM64 support that was recently added and further stability work.
-- **Translation and localization** - Completing missing translations and maintaining localization infrastructure.
-- **Documentation updates** - Keeping wiki, API docs, and contributor guides current.
 
 We anticipate maintenance costs will not exceed $100,000 USD.
 
@@ -105,19 +103,33 @@ This proposal does not cover Tatanka Mesh development. That is a separate effort
 
 ## New Development Initiatives
 
-- **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The initial implementation will use a coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. We had planned on migrating to use the decentralized Mesh network after it was finished, removing the need for a centralized server, but the final Mesh product may not be suitable depending on development decisions there. The coordination server will be open source so anyone can run one. One will be run on mainnet as part of this and ongoing maintenance proposals.
+- **Split Ticket Staking:** Implement split ticket purchasing directly in the Bison Wallet DCR wallet. Split tickets allow multiple users to pool funds to purchase a staking ticket, making staking accessible to users who cannot afford the full ticket price. This was previously available through external tooling but will now be a native wallet feature. The implementation uses an open-source coordination server to manage sessions, match participants, build the multi-participant ticket transaction, and collect signatures. A mainnet instance will be operated as part of this and ongoing maintenance proposals.
 
 We anticipate costs in this area will not exceed $25,000 USD.
 
-- **Fiat On-Ramp:** Integrate a third-party fiat on-ramp service (such as Alchemy Pay) into Bison Wallet, allowing users to purchase cryptocurrency directly within the wallet using credit cards, bank transfers, and other traditional payment methods. The on-ramp provider handles all KYC/AML compliance and payment processing. Our integration work covers the UI, API integration, supported asset and region filtering, and testing.
+- **Fiat On-Ramp:** Integrate a third-party fiat on-ramp service (such as Alchemy Pay) into Bison Wallet, allowing users to purchase cryptocurrency directly within the wallet using credit cards, bank transfers, and other traditional payment methods. The on-ramp provider handles all KYC/AML compliance and payment processing. This feature is disabled by default and opt-in via a startup flag, so users who prefer not to interact with KYC services are unaffected. Our integration work covers the UI, API integration, supported asset and region filtering, and testing.
 
 We anticipate costs in this area will not exceed $10,000 USD.
+
+## Multi-DEX Aggregator
+
+We have a [design plan](multi-dex-aggregator-plan.md) for transforming Bison Wallet from a dcrdex-only client into a universal DEX client that can execute swaps through multiple backends including EVM AMMs (Uniswap, Curve), intent-based protocols (NEAR Intents), and others. Users would get comparison pricing across protocols and choose their preferred trust/cost tradeoff per trade.
+
+This work is not being charged as part of this proposal. We intend to pursue funding for each integration from the relevant ecosystem's grants programs (e.g., Uniswap Grants, NEAR Foundation). The Decred ecosystem stands to benefit from this work through increased awareness and users as Bison Wallet becomes accessible to traders across multiple DeFi ecosystems, all while maintaining dcrdex atomic swaps as a core option.
 
 ## Code Signing
 
 Bison Wallet releases are currently signed by the Decred organization, but this adds delays when shipping patches and updates. By obtaining our own code signing certificates for Windows and macOS, we can release updates independently and get fixes to users faster. An Apple Developer membership is required for macOS signing and notarization, and a code signing certificate is required for Windows.
 
 We anticipate ongoing annual costs in this area will not exceed $1,000 USD.
+
+## Success Metrics
+
+- At least one stable release shipped (v1.1.0 final plus any patch releases).
+- Open bug count reduced from current levels.
+- All active trading pairs remain operational through upstream upgrades.
+- Split ticket staking live on mainnet.
+- Fiat on-ramp integration complete and available behind opt-in flag.
 
 ## Team
 
